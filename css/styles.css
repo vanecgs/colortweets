@@ -1,0 +1,11 @@
+.tweet {
+	width: 100%;
+	clear: both;
+}
+
+.tweet .letter {
+	float: left;
+	height: 150px;
+	margin-bottom: 20px;
+	text-indent: -9999px;
+}
