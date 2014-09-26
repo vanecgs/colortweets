@@ -1,11 +1,28 @@
+.tweet-container {
+	height: 170px;
+}
+
 .tweet {
+	position: relative;
 	width: 100%;
-	clear: both;
+	height: 150px;
+	cursor: pointer;
 }
 
 .tweet .letter {
 	float: left;
 	height: 150px;
-	margin-bottom: 20px;
 	text-indent: -9999px;
+}
+
+.tweet .full-tweet {
+	display: none;
+	position: absolute;
+	top: 35px;
+	text-align: center;
+	width: 100%;
+	padding: 10px 0;
+	background: #fff;
+	font-size: 20px;
+	font-family: 'Droid Sans', sans-serif;
 }

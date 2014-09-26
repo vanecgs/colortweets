@@ -66,10 +66,13 @@ $(function() {
 	var TweetView = Backbone.View.extend({
 		tagName:  'div',
 		attributes: {
-			'class' : 'tweet'
+			'class' : 'tweet-container'
 		},
-		template: _.template($('#item-template').html()),
-		events: {},
+		events: {
+			'mouseover .tweet' : 'showTweet',
+			'mouseleave .tweet' : 'hideTweet',
+			'click .tweet' : 'showTweet'
+		},
 		initialize: function() {
 			this.model.generateColoredText();
 			this.listenTo(this.model, 'change', this.render);
@@ -80,21 +83,30 @@ $(function() {
 			return this;
 		},
 		createColoredText: function() {
-			var tweetText = this.model.get('text').split(''),
+			var tweetText = this.model.get('text'),
 				tweetColors = this.model.get('coloredText'),
-				tweetHtml = $('<div/>'),
+				tweetHtml = $('<div class="tweet" />'),
 				numberOfLetters = tweetText.length;
 
 
-			tweetText.forEach(function(element, index) {
+			tweetText.split('').forEach(function(element, index) {
 				var container = $('<div class="letter"/>').css({'width': 100 / numberOfLetters + '%'});
 
 				container.html(element).css('background-color', tweetColors[index]);
 				tweetHtml.append(container);
 			});
 
+			tweetHtml.append('<p class="full-tweet">' + tweetText + '</p>');
 
-			return tweetHtml.html();
+			return tweetHtml;
+		},
+		showTweet: function() {
+			$(this.el).find('.letter').css('opacity', '0.5');
+			$(this.el).find('.full-tweet').fadeIn("slow");
+		},
+		hideTweet: function() {
+			$(this.el).find('.letter').css('opacity', '1');
+			$(this.el).find('.full-tweet').fadeOut("slow");
 		}
 	});
 
