@@ -1,17 +1,60 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<title>Color Tweets</title>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Colored Tweets</title>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	
+	<!-- External JS Libraries -->
 	<script type="text/javascript" src="js/jquery-1.11.1.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/underscore.js"></script>
 	<script type="text/javascript" src="js/backbone.js"></script>
 	<script type="text/javascript" src="js/backbone.localStorage.js"></script>
+
+	<!-- Custom JS code -->
 	<script type="text/javascript" src="js/colortweets.js"></script>
 
+	<!-- Fonts -->
 	<link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" type="text/css" href="css/styles.css">
+
+	<!-- External CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+	<!-- Custom CSS -->
+	<link rel="stylesheet" type="text/css" href="css/styles.css">	
 </head>
 <body>
+<div class="container">
+	<ul class="nav nav-tabs" role="tablist">
+		<li><a href="/colortweets" role="tab" data-toggle="tab">Inicio</a></li>
+		<li><a href="#about" role="tab" data-toggle="tab">¿Qué es Colored Tweets?</a></li>
+		<li><a href="http://www.titacgs.com.ar/" target="_blank">Acerca de mi</a></li>
+		<li><a href="https://github.com/vanecgs/colortweets/" target="_blank">GitHub</a></li>
+	</ul>
+
+	<!-- Tab panes -->
+	<div class="tab-content">
+		<div class="tab-pane" id="about">
+			<div class="row">
+				<div class="col-sm-12">
+					<p>Colored Tweets surge como un experimento simple en el área de visualización de datos y la inquietud de buscar nuevas formas de representación.</p>
+					<p>El alfabeto es uno de los primeros sistemas que aprendemos a utilizar para representar el lenguaje de manera escrita, me pregunté que pasaría si cambiamos este conjunto de simbolos por otros, por colores, ¿Seríamos capaces de entender un mensaje visualizando un conjunto de colores?.</p>
+					<p>Aprovechando las redes sociales como fuentes de información continua, Colored Tweets toma las últimas publicaciones en Twitter y sustituye cada una de las letras de un mensaje por colores.</p>
+				</div>				
+			</div>			
+		</div>
+	</div>
+</div>
 <div id="colortweets">
 	<div id="tweet-list"></div>
 </div>
